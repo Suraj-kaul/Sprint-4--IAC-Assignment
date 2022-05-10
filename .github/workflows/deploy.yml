@@ -7,7 +7,8 @@ on:
   
   push:
     branches:
-      - main
+    - main
+    
 env:
   Bucket: surajkaul12345
   Tfstate_file: S3.tfstate
