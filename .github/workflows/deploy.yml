@@ -45,4 +45,5 @@ jobs:
       - name: terraform apply
       
         run: |
+          cd example
           terraform apply -auto-approve   
