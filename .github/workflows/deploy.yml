@@ -40,9 +40,9 @@ jobs:
       - name: terraform plan
         run: |
           cd example
-          terraform plan -input=false -lock=false
+          terraform plan -no-color
 
       - name: terraform apply
       
         run: |
-          terraform apply -auto-approve -input=false -lock=false   
+          terraform apply -auto-approve   
