@@ -9,7 +9,7 @@ env:
 
 jobs:
   terraform_plan:
-    name: terraform
+    name: terraform 
     runs-on: ubuntu-latest
 
     
