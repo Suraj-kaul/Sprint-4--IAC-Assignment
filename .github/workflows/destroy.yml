@@ -1,6 +1,6 @@
 name: destroy
 on:
-  wokrflow_dispatch:
+  workflow_dispatch:
     
 env:
   BUCKET: surajkaul12345
