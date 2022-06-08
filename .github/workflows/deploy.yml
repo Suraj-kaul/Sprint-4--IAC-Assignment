@@ -32,7 +32,7 @@ jobs:
           output_path: myResults/
     # Display the results in json format
       - name: display kics results
-        run: |
+        run: | 
         cat myResults/results.json    
       
       - name: Configure AWS credentials from Test account
