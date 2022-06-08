@@ -25,10 +25,10 @@ jobs:
           terraform_version: 1.1.7
 
       - name: run kics Scan
-        uses: checkmarx/kics-github-action@v1.3
+        uses: checkmarx/kics-github-action@v1.5
         with:
       
-          path: 'terraform/example'
+          path: ./example
           output_path: myResults/
     # Display the results in json format
       - name: display kics results
