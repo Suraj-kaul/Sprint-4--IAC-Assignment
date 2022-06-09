@@ -27,13 +27,12 @@ jobs:
       - name: run kics Scan
         uses: checkmarx/kics-github-action@v1.5
         with:
-      
-          path: ./example
+          path: 
           output_path: myResults/
     # Display the results in json format
       - name: display kics results
         run: | 
-          cat myResults/results.json    
+          cat myResults/results.json     
       
       - name: Configure AWS credentials from Test account
         uses: aws-actions/configure-aws-credentials@v1   
