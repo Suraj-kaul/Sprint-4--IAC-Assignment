@@ -5,6 +5,7 @@ resource "aws_s3_bucket" "sprint4" {
      
     tags = {
         Name = "My-bucket"
+        purpose = "no"
         }
         
     versioning {
