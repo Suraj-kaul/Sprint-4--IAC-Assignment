@@ -27,7 +27,7 @@ jobs:
       - name: run kics Scan
         uses: checkmarx/kics-github-action@v1.5
         with:
-          path: /demo
+          path: example/
           output_path: myResults/
     # Display the results in json format
       - name: display kics results
