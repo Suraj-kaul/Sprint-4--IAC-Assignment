@@ -1,5 +1,4 @@
-module"s3_demo"{
-    source="https://github.com/aakashvishwakarma/s3-module.git"
-    acl= "public-read" 
-    buckt_name= "suraj13062022"
-}   
+module "s3-bucket_example_object" {
+  source  = "terraform-aws-modules/s3-bucket/aws//examples/object"
+  version = "3.2.3"
+}
