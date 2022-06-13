@@ -1,4 +1,5 @@
 module"s3_demo"{
-    source="github.com/aakashvishwakarma/s3-module"
+    source="git::https://github.com/aakashvishwakarma/s3-module.git"
+    acl = "public-read"
    
 }   
