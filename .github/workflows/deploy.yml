@@ -48,10 +48,10 @@ jobs:
           cd example
           terraform init -reconfigure -backend-config="bucket=${{env.BUCKET}}" -backend-config="key=${{env.TFSTATE_FILE}}"
       
-      # - name: terraform plan
-      #   run: |
-      #     cd example
-      #     terraform plan -var-file="terraform.tfvars"
+      - name: terraform plan
+        run: |
+          cd example
+          terraform plan -var-file="terraform.tfvars"
 
       # - name: terraform apply
       
@@ -91,15 +91,15 @@ jobs:
           Aws-region: ${{env.aws-region}}
 
       
-      # - name: terraform init  
-      #   run: |
-      #     cd example
-      #     terraform init -reconfigure -backend-config="bucket=${{env.BUCKET}}" -backend-config="key=${{env.TFSTATE_FILE}}"
-      
-      - name: terraform plan
+      - name: terraform init  
         run: |
           cd example
-          terraform plan -var-file="terraform.tfvars"
+          terraform init -reconfigure -backend-config="bucket=${{env.BUCKET}}" -backend-config="key=${{env.TFSTATE_FILE}}"
+      
+      # - name: terraform plan
+      #   run: |
+      #     cd example
+      #     terraform plan -var-file="terraform.tfvars"
 
       - name: terraform apply
       
