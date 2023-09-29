@@ -1,0 +1,31 @@
+name: S3 Versioning enable
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: S3 Versioning
+
+    env:
+      TF_STATE_BUCKET: hello-aarushi-terraform-state
+      S3_TAG:  TagSet=[{Key=Owner,Value="suraj.kaul@us.mcd.com"}]
+
+
+
+    steps:
+    - name: Configure AWS credentials from Test account
+      uses: aws-actions/configure-aws-credentials@v1   
+      with:
+        aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+        aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+        aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
+        aws-region: us-east-1
+    
+    
+        
+    - name: Tag the S3 bucket
+      run: | 
+          aws s3api put-bucket-versioning --bucket ${{env.TF_STATE_BUCKET}} --versioning-configuration Status=Enabled  
+          aws s3api  put-bucket-tagging --bucket ${{env.TF_STATE_BUCKET}}  --tagging ${{env.S3_TAG}}
