@@ -28,4 +28,4 @@ jobs:
     - name: Tag the S3 bucket
       run: | 
           aws s3api put-bucket-versioning --bucket ${{env.TF_STATE_BUCKET}} --versioning-configuration Status=Enabled  
-          aws s3api  put-bucket-tagging --bucket ${{env.TF_STATE_BUCKET}}  --tagging ${{env.S3_TAG}}
+          aws s3api  put-bucket-tagging --bucket ${{env.TF_STATE_BUCKET}}  --tagging "${{env.S3_TAG}}"
