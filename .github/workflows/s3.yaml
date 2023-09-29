@@ -10,7 +10,7 @@ jobs:
 
     env:
       TF_STATE_BUCKET: hello-aarushi-terraform-state
-      S3_TAG:  TagSet=[{Key=Owner,Value="suraj.kaul@us.mcd.com"}]
+      S3_TAG:  TagSet=[{Key=Owner,Value="suraj.kaul@us.mcd.com"},{Key=Env,Value="suraj.koul@us.mcd.com"}]
 
 
 
